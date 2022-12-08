@@ -1,0 +1,800 @@
+Combien de comptes ont un solde d'épargne supérieur au solde d'épargne moyen ?
+SELECT count(*) FROM savings WHERE balance > (SELECT avg(balance) FROM savings)
+Comment s'appellent les professeurs dont la ville natale n'est pas « Little Lever Urban District » ?
+"SELECT Name FROM teacher WHERE Hometown != ""Little Lever Urban Distric"""
+Trouver tous les états dans lesquels il y a un Whataburger
+"SELECT state FROM business WHERE name = ""Whataburger"";"
+Combien y a-t-il de services ?
+SELECT count(*) FROM services
+Quels sont la semaine maximum et minimum en plus de tous les volumes ?
+SELECT max(Weeks_on_Top) , min(Weeks_on_Top) FROM volume
+Quels sont les souvenirs et les porteurs de téléphones ?
+SELECT Memory_in_G , Carrier FROM phone
+Quelle est la description du club « Pen and Paper Gaming » ?
+"SELECT clubdesc FROM club WHERE clubname = ""Tennis Club"""
+Quels sont les identifiants, la date d'ouverture, le nom et d'autres détails pour tous les comptes ?
+SELECT account_id , date_account_opened , account_name , other_account_details FROM Accounts
+Trouvez le prénom et le nom des élèves dont l'âge est inférieur à la moyenne d'âge.
+SELECT fname , lname FROM student WHERE age < (SELECT avg(age) FROM student)
+Quelle adresse permanente est différente de son adresse actuelle ? Indiquez son prénom.
+SELECT first_name FROM Students WHERE current_address_id != permanent_address_id
+Trouvez le nombre d'employés que nous avons.
+SELECT count(*) FROM Employees;
+Quel est le nombre moyen d'années passées à travailler comme journaliste ?
+SELECT avg(Years_working) FROM journalist
+Quel est le nombre moyen de chevaux de trait des élevages de plus de 5000 chevaux au total ?
+SELECT avg(Working_Horses) FROM farm WHERE Total_Horses > 5000
+Quel est le point maximum pour les grimpeurs dont le pays est le Royaume-Uni ?
+"SELECT max(Points) FROM climber WHERE Country = ""United Kingdom"""
+Combien y a-t-il de candidats ?
+SELECT count(*) FROM candidate
+Comptez le nombre de fêtes.
+SELECT count(*) FROM party
+les gens dans le rocher
+"SELECT population FROM city WHERE city_name = ""boulder"";"
+quels états entourent le kentucky
+"SELECT border FROM border_info WHERE state_name = ""kentucky"";"
+Comptez le nombre de services.
+SELECT count(*) FROM services
+"Trouvez les ventes maximales et minimales des entreprises qui ne sont pas dans le secteur ""Banque""."
+"SELECT max(Sales_billion) , min(Sales_billion) FROM Companies WHERE Industry != ""Banking"""
+Indiquez le prénom, le deuxième prénom et le nom de famille de tout le personnel.
+SELECT first_name , middle_name , last_name FROM Staff;
+"Quelle est la catégorie et le prix d'achat typique du produit portant le nom ""cumin"" ?"
+"SELECT product_category_code , typical_buying_price FROM products WHERE product_name = ""cumin"""
+Combien de produits ont des prix d'au moins 180 ?
+SELECT count(*) FROM products WHERE price >= 180
+"Quelles sont les dates de naissance de tous les invités dont le sexe est ""Homme"" ?"
+"SELECT date_of_birth FROM Guests WHERE gender_code = ""Male"""
+quelle est la population de la californie
+"SELECT population FROM state WHERE state_name = ""california"";"
+Quel est le nombre maximal et minimal de décès causé à chaque fois ?
+SELECT max(killed) , min(killed) FROM death
+"retournez-moi le nombre de références de "" Rendre les systèmes de bases de données utilisables "" ."
+"SELECT reference_num FROM publication WHERE title = ""Making database systems usable"";"
+Quel est le nombre total de morts et de dégâts pour toutes les tempêtes avec une vitesse maximale supérieure à la moyenne ?
+SELECT sum(number_deaths) , sum(damage_millions_USD) FROM storm WHERE max_speed > (SELECT avg(max_speed) FROM storm)
+"Dans quelle ville est né "" Kevin Spacey "" ?"
+"SELECT birth_city FROM director WHERE name = ""director_name0"";"
+combien de personnes y a-t-il en californie
+"SELECT population FROM state WHERE state_name = ""california"";"
+Nommez tous les produits avec le prochain ID d'entrée supérieur à 8.
+SELECT catalog_entry_name FROM catalog_contents WHERE next_entry_id > 8
+Qui a réalisé Avatar ?
+SELECT director FROM Movie WHERE title = 'Avatar'
+trouver le nombre minimum et maximum de produits de tous les magasins.
+SELECT min(Number_products) , max(Number_products) FROM shop
+Quel est le montant moyen, minimum, maximum et total de la transaction ?
+SELECT avg(transaction_amount) , min(transaction_amount) , max(transaction_amount) , sum(transaction_amount) FROM Financial_transactions
+"Trouvez la ligne d'adresse 1 et 2 du client avec l'email ""vbogisich@example.org""."
+"SELECT address_line_1 , address_line_2 FROM customers WHERE email_address = ""vbogisich@example.org"""
+"En quelle année est né "" Benedict Cumberbatch """
+"SELECT birth_year FROM actor WHERE name = ""Benedict Cumberbatch"";"
+Combien y a-t-il de clubs ?
+SELECT count(*) FROM club
+donne moi les villes qui sont au texas
+"SELECT city_name FROM city WHERE state_name = ""texas"";"
+Trouvez le montant total des bonus accordés dans toutes les évaluations.
+SELECT sum(bonus) FROM evaluation
+Quel âge ont tous les artistes musicaux ?
+SELECT Age FROM artist
+Afficher les noms de toutes les régions à l'exception du Danemark.
+SELECT region_name FROM region WHERE region_name != 'Denmark'
+montrent la basse température la plus basse et la vitesse du vent la plus élevée en miles par heure.
+SELECT min(low_temperature) , max(wind_speed_mph) FROM weekly_weather
+Combien y a-t-il de comptes ?
+SELECT count(*) FROM Accounts
+Combien d'artistes bangladais sont répertoriés ?
+"SELECT count(*) FROM artist WHERE country = ""Bangladesh"""
+Où est situé le club « Pen and Paper Gaming » ?
+"SELECT clublocation FROM club WHERE clubname = ""Tennis Club"""
+"Quel est le nombre de passagers internationaux et nationaux de l'aéroport de Londres ""Heathrow"" ?"
+"SELECT International_Passengers , Domestic_Passengers FROM airport WHERE Airport_Name = ""London Heathrow"""
+Combien y a-t-il de montagnes russes ?
+SELECT count(*) FROM roller_coaster
+Quel est le nombre minimum, maximum et moyen de places assises pour toutes les pistes.
+SELECT min(seating) , max(seating) , avg(seating) FROM track
+Renvoyez les places assises minimales, maximales et moyennes sur toutes les pistes.
+SELECT min(seating) , max(seating) , avg(seating) FROM track
+Quel est le nombre total de clients qui utilisent les banques à New York ?
+SELECT sum(no_of_customers) FROM bank WHERE city = 'New York City'
+Comptez le nombre de villes dans l'état du Colorado.
+"SELECT count(*) FROM addresses WHERE state_province_county = ""Colorado"""
+afficher le numéro d'employé, le nom (prénom et nom) et le titre du poste pour tous les employés dont le salaire est supérieur à tout salaire des employés dont le titre du poste est PU_MAN.
+SELECT employee_id , first_name , last_name , job_id FROM employees WHERE salary > ( SELECT max(salary) FROM employees WHERE job_id = 'PU_MAN' )
+Renvoyez le nombre maximum de points pour les grimpeurs du Royaume-Uni.
+"SELECT max(Points) FROM climber WHERE Country = ""United Kingdom"""
+"Quelle est la nationalité de "" Kevin Spacey "" ?"
+"SELECT nationality FROM director WHERE name = ""director_name0"";"
+Comment s'appellent tous les jeux vidéo qui sont des cartes à collectionner ?
+"SELECT gname FROM Video_games WHERE gtype = ""Collectible card game"""
+Comptez le nombre de matchs.
+SELECT count(*) FROM matches
+"Quel est le contenu de la chaîne de télévision avec le nom de série ""Sky Radio"" ?"
+"SELECT Content FROM TV_Channel WHERE series_name = ""Sky Radio"";"
+Trouvez le nombre de comptes dont le solde d'épargne est supérieur au solde d'épargne moyen.
+SELECT count(*) FROM savings WHERE balance > (SELECT avg(balance) FROM savings)
+Énumérez le nom des acteurs dont l'âge n'est pas de 20 ans.
+SELECT Name FROM actor WHERE Age != 20
+Indiquez les semaines maximales et minimales en haut de tous les volumes.
+SELECT max(Weeks_on_Top) , min(Weeks_on_Top) FROM volume
+Indiquez l'identifiant de l'événement client, la date d'emménagement et l'identifiant de propriété correspondants.
+SELECT customer_event_id , date_moved_in , property_id FROM customer_events
+"Afficher le code de localisation du pays ""Canada""."
+"SELECT location_code FROM Ref_locations WHERE location_name = ""Canada"""
+Quelles sont les origines de tous les vols qui se dirigent vers Honolulu ?
+"SELECT origin FROM Flight WHERE destination = ""Honolulu"""
+Quel est le nom et le bâtiment des départements dont le budget est supérieur au budget moyen ?
+SELECT dept_name , building FROM department WHERE budget > (SELECT avg(budget) FROM department)
+Afficher le nombre de projets.
+SELECT count(*) FROM Projects
+Comment s'appellent les pilotes âgés de 25 ans ou plus ?
+SELECT Name FROM pilot WHERE Age >= 25
+dans quel état est springfield
+"SELECT state_name FROM city WHERE city_name = ""springfield"";"
+nommer les rivières de l'illinois
+"SELECT river_name FROM river WHERE traverse = ""illinois"";"
+Quel est le montant total de tous les paiements ?
+SELECT sum(amount) FROM payment
+Combien y a-t-il d'événements ?
+SELECT count(*) FROM event
+Combien y a-t-il de sortes d'enzymes ?
+SELECT count(*) FROM enzyme
+Compter le nombre d'employés
+SELECT count(*) FROM Employee
+"Quel est le code de type de modèle pour la description du type de modèle ""Livre""."
+"SELECT template_type_code FROM Ref_template_types WHERE template_type_description = ""Book"""
+Énumérez les dates et les pourcentages de vote des élections.
+SELECT Date , Vote_Percent FROM election
+"Quelle est la description de la catégorie de produits et l'unité de mesure de la catégorie ""Herbes"" ?"
+"SELECT product_category_description , unit_of_measure FROM ref_product_categories WHERE product_category_code = ""Herbs"""
+Afficher les noms de tous les avions avec des distances supérieures à la moyenne.
+SELECT name FROM Aircraft WHERE distance > (SELECT avg(distance) FROM Aircraft)
+Comptez le nombre de modèles de puces qui n'ont pas de wifi.
+SELECT count(*) FROM chip_model WHERE wifi = 'No'
+Quels sont le nom complet (nom et prénom) et le salaire de tous les employés qui n'ont aucune valeur pour la commission ?
+"SELECT first_name , last_name , salary FROM employees WHERE commission_pct = ""null"""
+Combien d'employés vivent en Géorgie ?
+"SELECT count(*) FROM addresses WHERE state_province_county = ""Colorado"""
+Afficher le total des points de tous les joueurs.
+SELECT sum(Points) FROM player
+nombre de personnes dans le bloc
+"SELECT population FROM city WHERE city_name = ""boulder"";"
+où est le point le plus bas de l'iowa
+"SELECT lowest_point FROM highlow WHERE state_name = ""iowa"";"
+quels états ont des points supérieurs au point le plus élevé du colorado
+"SELECT state_name FROM highlow WHERE highest_elevation > ( SELECT highest_elevation FROM highlow WHERE state_name = ""colorado"" );"
+Quels intitulés de poste correspondent aux emplois dont le salaire est supérieur à 9 000 ?
+SELECT job_title FROM jobs WHERE min_salary > 9000
+Trouvez les identifiants des problèmes signalés après le 26/06/1978.
+"SELECT problem_id FROM problems WHERE date_problem_reported > ""1978-06-26"""
+Renvoie l'unité de mesure pour les produits 'Herbe'.
+"SELECT unit_of_measure FROM ref_product_categories WHERE product_category_code = ""Herbs"""
+Répertorier tous les types de restaurants.
+SELECT ResTypeName FROM Restaurant_Type;
+Quand tous les membres du personnel de recherche commencent-ils à travailler et quand cessent-ils de travailler ?
+SELECT date_from , date_to FROM Project_Staff WHERE role_code = 'researcher'
+Combien de campus existent dans le comté de LA ?
+"SELECT count(*) FROM campuses WHERE county = ""Los Angeles"""
+Quel est le nombre de techniciens ?
+SELECT count(*) FROM technician
+Quels sont tous les codes de type de document et les noms de type de document ?
+SELECT document_type_code , document_type_name FROM Ref_document_types
+quels états la rivière ohio traverse-t-elle
+"SELECT traverse FROM river WHERE river_name = ""ohio"";"
+Quels sont les identifiants, les noms et les descriptions de tous les documents ?
+SELECT document_id , document_name , document_description FROM Documents
+Afficher l'âge minimum, maximum et moyen de toutes les personnes.
+SELECT min(age) , max(age) , avg(age) FROM people
+"Quels auteurs portent le nom de famille ""Ueno"" ? Listez leurs prénoms."
+"SELECT fname FROM authors WHERE lname = ""Ueno"""
+Quelle est l'espérance de vie moyenne des habitants de l'Afrique centrale ?
+"SELECT avg(LifeExpectancy) FROM country WHERE Region = ""Central Africa"""
+Quels sont tous les codes d'emplacement et les noms d'emplacement ?
+SELECT location_code , location_name FROM Ref_locations
+quels états ont des rivières nommées ohio
+"SELECT traverse FROM river WHERE river_name = ""ohio"";"
+springfield est dans quel état
+"SELECT state_name FROM city WHERE city_name = ""springfield"";"
+"Quelle est la nationalité de l'acteur "" Christoph Waltz "" ?"
+"SELECT nationality FROM actor WHERE name = ""Christoph Waltz"";"
+Combien y a-t-il de lycéens ?
+SELECT count(*) FROM Highschooler
+"Trouver l'emplacement du club ""Pen and Paper Gaming""."
+"SELECT clublocation FROM club WHERE clubname = ""Tennis Club"""
+Trouver le montant total et moyen des règlements.
+SELECT sum(settlement_amount) , avg(settlement_amount) FROM settlements
+Quel est le solde moyen des comptes chèques ?
+SELECT avg(balance) FROM checking
+Montrez-moi tous les principaux lacs des États-Unis
+SELECT lake_name FROM lake WHERE area > 750;
+"Quels sont les porteurs d'appareils dont les plates-formes logicielles ne sont pas ""Android"" ?"
+SELECT Carrier FROM device WHERE Software_Platform != 'Android'
+Comptez le nombre de comptes.
+SELECT count(*) FROM Accounts
+Quels sont les noms et pays des membres ?
+SELECT Name , Country FROM member
+Quel est l'identifiant et le poids de chaque animal de compagnie âgé de plus d'un an ?
+SELECT petid , weight FROM pets WHERE pet_age > 1
+Dites-moi l'âge du chien le plus âgé.
+SELECT max(age) FROM Dogs
+Comptez le nombre de déclarations.
+SELECT count(*) FROM Statements
+Quelle est la quantité moyenne des stocks ?
+SELECT avg(Quantity) FROM stock
+combien de personnes vivent à boulder
+"SELECT population FROM city WHERE city_name = ""boulder"";"
+Quel est l'identifiant et la part de marché du navigateur Safari ?
+SELECT id , market_share FROM browser WHERE name = 'Safari'
+"Combien de tests ont le résultat ""Échec"" ?"
+"SELECT count(*) FROM Student_Tests_Taken WHERE test_result = ""Fail"""
+Comptez le nombre de tempêtes dans lesquelles au moins 1 personne est morte.
+SELECT count(*) FROM storm WHERE Number_Deaths > 0
+Afficher la date de validité et la date de validité pour la carte avec le numéro de carte '4560596484842'.
+"SELECT date_valid_from , date_valid_to FROM Customers_cards WHERE card_number = ""4560596484842"""
+Renvoie les pays des montagnes qui ont une hauteur supérieure à 5000.
+SELECT Country FROM mountain WHERE Height > 5000
+Quel est le nombre maximum et minimum de passagers en transit de tous les aéroports.
+SELECT max(Transit_Passengers) , min(Transit_Passengers) FROM airport
+"Renvoyez la date de naissance de tous les invités avec le code de sexe ""Homme""."
+"SELECT date_of_birth FROM Guests WHERE gender_code = ""Male"""
+Afficher tous les ministres qui n'appartiennent pas au Parti du progrès.
+SELECT minister FROM party WHERE party_name != 'Progress Party'
+Quel est le nombre maximum d'inscriptions dans toutes les écoles ?
+SELECT max(Enrollment) FROM university
+Qui sont les différents joueurs et combien d'années chacun a-t-il joué ?
+SELECT Player , Years_Played FROM player
+Combien y a-t-il de livres ici?
+SELECT count(*) FROM book
+Quel est l'identifiant de chaque employé qui a au moins un salaire de 100 000 ?
+SELECT eid FROM Employee WHERE salary > 100000
+Comptez le nombre de comptes.
+SELECT count(*) FROM Accounts
+Quelles sont les dates et les années d'ouverture de la boutique nommée Apple ?
+"SELECT Open_Date , Open_Year FROM shop WHERE Shop_Name = ""Apple"""
+Combien d'éléments de calendrier avons-nous ?
+SELECT count(*) FROM Ref_calendar
+Donnez-moi la date de réclamation, la date de règlement pour toutes les réclamations dont le montant réclamé est supérieur à la moyenne.
+SELECT Date_Claim_Made , Date_Claim_Settled FROM Claims WHERE Amount_Claimed > ( SELECT avg(Amount_Claimed) FROM Claims )
+Renvoie les noms des lutteurs avec moins de 100 jours de détention.
+SELECT Name FROM wrestler WHERE Days_held < 100
+Quel est le nombre moyen de spectateurs pour les festivals ?
+SELECT avg(Num_of_Audience) FROM festival_detail
+Quel est le montant moyen dû pour tous les paiements ?
+SELECT avg(amount_due) FROM payments
+Donnez-moi toutes les informations sur l'embauche.
+SELECT * FROM hiring
+Combien y a-t-il d'équipements de dortoir différents ?
+SELECT count(*) FROM dorm_amenity
+"Quel est le code postal du comté nommé ""Howard"" ?"
+"SELECT Zip_code FROM county WHERE County_name = ""Howard"""
+Quel est le nombre d'avions ?
+SELECT count(*) FROM Aircraft
+Combien y a-t-il de chanteurs ?
+SELECT count(*) FROM singer
+quelles rivières traversent l'illinois
+"SELECT river_name FROM river WHERE traverse = ""illinois"";"
+Trouver le montant total réclamé de toutes les réclamations.
+SELECT sum(Amount_Claimed) FROM Claims
+Combien d'étudiants sont là?
+SELECT count(*) FROM student
+Combien y a-t-il de projets ?
+SELECT count(*) FROM Projects
+Trouvez le nombre total de lits King disponibles.
+SELECT sum(beds) FROM Rooms WHERE bedtype = 'King';
+quelles rivières ne traversent pas les états-unis
+"SELECT river_name FROM river WHERE country_name != ""usa"";"
+Quels ministres ne font pas partie du Parti du progrès ?
+SELECT minister FROM party WHERE party_name != 'Progress Party'
+Quelles sont toutes les informations sur l'embauche?
+SELECT * FROM hiring
+Quels sont les noms des produits dont le prix est d'au plus 200 ?
+SELECT name FROM products WHERE price <= 200
+Trouvez le solde total des comptes chèques.
+SELECT sum(balance) FROM checking
+Quels sont les noms et heures d'arrivée des trains ?
+SELECT Name , Arrival FROM train
+Afficher tous les noms d'artistes et l'année d'adhésion qui ne sont pas des États-Unis.
+SELECT name , year_join FROM artist WHERE country != 'United States'
+Combien de clients vivent dans la ville de Prague ?
+"SELECT count(*) FROM customers WHERE city = ""Prague"";"
+Compter le nombre de conducteurs.
+SELECT count(*) FROM conductor
+Donnez le nombre moyen de chevaux de trait dans les exploitations de plus de 5 000 chevaux au total.
+SELECT avg(Working_Horses) FROM farm WHERE Total_Horses > 5000
+Retrouvez tous les films produits en 2015
+SELECT title FROM movie WHERE release_year = 2015;
+Combien de chansons utilisent la batterie comme instrument ?
+"SELECT count(*) FROM instruments WHERE instrument = ""drums"""
+Quel est le nombre maximum et minimum de vaches dans toutes les fermes.
+SELECT max(Cows) , min(Cows) FROM farm
+Quelle est la note moyenne et la résolution de toutes les chansons bangla ?
+"SELECT avg(rating) , avg(resolution) FROM song WHERE languages = ""bangla"""
+"Retrouvez tous les acteurs nés à "" Téhéran """
+"SELECT name FROM actor WHERE birth_city = ""Tehran"";"
+Quels problèmes sont signalés avant le 1978-06-26 ? Donnez-moi les identifiants des problèmes.
+"SELECT problem_id FROM problems WHERE date_problem_reported < ""1978-06-26"""
+Renvoyer la date de début de réclamation pour les réclamations dont le montant réclamé n'est pas supérieur à la moyenne
+SELECT Date_Claim_Made FROM Claims WHERE Amount_Settled <= ( SELECT avg(Amount_Settled) FROM Claims )
+Comptez le nombre de chambres qui ne sont pas dans le bâtiment Lamberton.
+SELECT count(*) FROM classroom WHERE building != 'Lamberton'
+Quelles sont les dates de réclamation et les dates de règlement de tous les règlements ?
+SELECT Date_Claim_Made , Date_Claim_Settled FROM Settlements
+Affichez les inscriptions moyennes, maximales et minimales de toutes les écoles.
+SELECT avg(enrollment) , max(enrollment) , min(enrollment) FROM school
+Quels sont l'identifiant d'employé et l'identifiant de service de chaque médecin principalement affilié.
+SELECT physician , department FROM affiliated_with WHERE primaryaffiliation = 1
+Quels sont les noms et les notes de chaque lycéen ?
+SELECT name , grade FROM Highschooler
+Quel est l'âge minimum, moyen et maximum de tous les élèves ?
+SELECT min(age) , avg(age) , max(age) FROM Student
+Indiquez le code de type de document pour le document avec l'identifiant 2.
+SELECT document_type_code FROM Documents WHERE document_id = 2;
+Quel est le code scolaire du service comptabilité ?
+"SELECT school_code FROM department WHERE dept_name = ""Accounting"""
+dans quel état se trouve mount whitney
+"SELECT state_name FROM mountain WHERE mountain_name = ""whitney"";"
+Quelles sont les dates des notes d'évaluation?
+SELECT date_of_notes FROM Assessment_Notes
+Quel est le numéro de téléphone et le code postal de l'adresse 1031 Daugavpils Parkway?
+SELECT phone , postal_code FROM address WHERE address = '1031 Daugavpils Parkway'
+Quels sont les noms de tous les types de médias ?
+SELECT name FROM media_types;
+"Afficher les adresses et téléphones de tous les immeubles gérés par ""Brenden""."
+"SELECT building_address , building_phone FROM Apartment_Buildings WHERE building_manager = ""Brenden"""
+"Restituez le décor de la pièce nommée ""Recluse et défiance""."
+"SELECT decor FROM Rooms WHERE roomName = ""Recluse and defiance"";"
+Trouvez le nombre total de clients.
+SELECT count(*) FROM Customers
+Trouvez les détails pour tous les modèles de puces.
+SELECT * FROM chip_model
+quels états sont à côté du kentucky
+"SELECT border FROM border_info WHERE state_name = ""kentucky"";"
+Comptez le nombre de courses.
+SELECT count(*) FROM race
+Trouvez le nombre d'étapes distinctes dans le traitement des réclamations.
+SELECT count(*) FROM claims_processing_stages
+Quels sont les identifiants d'employé et les identifiants de poste pour les employés qui gagnent moins que l'employé le moins bien rémunéré avec le titre MK_MAN ?
+SELECT employee_id , job_id FROM employees WHERE salary < ( SELECT min(salary) FROM employees WHERE job_id = 'MK_MAN' )
+Combien de personnes vivent dans le district de Gelderland ?
+"SELECT sum(Population) FROM city WHERE District = ""Gelderland"""
+"En quelle année a été produit le film "" The Imitation Game """
+"SELECT release_year FROM movie WHERE title = ""The Imitation Game"";"
+Trouver le nom des chambres dont le prix est supérieur au prix moyen.
+SELECT roomName FROM Rooms WHERE basePrice > ( SELECT avg(basePrice) FROM Rooms );
+dans quel état se trouve springfield
+"SELECT state_name FROM city WHERE city_name = ""springfield"";"
+Trouver le nombre d'élèves au total.
+SELECT count(*) FROM student
+Combien d'architectes sont des femmes ?
+SELECT count(*) FROM architect WHERE gender = 'female'
+Comptez le nombre de factures.
+SELECT count(*) FROM Invoices
+quelles rivières traversent l'illinois
+"SELECT river_name FROM river WHERE traverse = ""illinois"";"
+donne moi les villes aux etats unis
+SELECT city_name FROM city;
+Quels sont les identifiants des candidats dont le code de résultat est Pass ?
+"SELECT candidate_id FROM candidate_assessments WHERE asessment_outcome_code = ""Pass"""
+afficher toutes les informations sur le département Marketing.
+SELECT * FROM departments WHERE department_name = 'Marketing'
+Indiquez le nom de tous les campus du comté de Los Angeles.
+"SELECT campus FROM campuses WHERE county = ""Los Angeles"""
+Quelle est la population totale du district de Gelderland ?
+"SELECT sum(Population) FROM city WHERE District = ""Gelderland"""
+quel est le point le plus bas de l'iowa
+"SELECT lowest_point FROM highlow WHERE state_name = ""iowa"";"
+"Liste tous les dessins animés réalisés par ""Ben Jones""."
+"SELECT Title FROM Cartoon WHERE Directed_by = ""Ben Jones"";"
+Quels sont les noms et prénoms de tous les clients ?
+SELECT first_name , last_name FROM Customers;
+Comptez le nombre de documents.
+SELECT count(*) FROM Documents
+Trouvez le montant de règlement maximum et minimum.
+SELECT max(settlement_amount) , min(settlement_amount) FROM settlements
+Combien y a-t-il de grimpeurs ?
+SELECT count(*) FROM climber
+combien de personnes vivaient dans le rocher
+"SELECT population FROM city WHERE city_name = ""boulder"";"
+Renvoie la moyenne des points de la barre horizontale pour tous les gymnastes.
+SELECT avg(Horizontal_Bar_Points) FROM gymnast
+"Retour des titres célèbres de l'artiste appelé ""Triumfall""."
+"SELECT Famous_Title FROM artist WHERE Artist = ""Triumfall"""
+Trouvez le nom des clients qui n'ont pas payé en espèces.
+SELECT customer_name FROM customers WHERE payment_method != 'Cash'
+Quels sont le sexe et la profession des joueurs ?
+SELECT Gender , Occupation FROM player
+Quelles sont toutes les informations sur le département Marketing ?
+SELECT * FROM departments WHERE department_name = 'Marketing'
+Quel est l'identifiant du critique nommé Daniel Lewis ?
+"SELECT rID FROM Reviewer WHERE name = ""Daniel Lewis"""
+Quels sont les identifiants, noms complets et téléphones de chaque client ?
+SELECT customer_id , customer_first_name , customer_last_name , customer_phone FROM Customers
+Combien y a-t-il de magasins ?
+SELECT count(*) FROM store
+Combien y a-t-il de débats ?
+SELECT count(*) FROM debate
+Combien de classements de films ont plus de 3 étoiles ?
+SELECT count(*) FROM Rating WHERE stars > 3
+Quelle est l'altitude maximale de tous les aéroports du pays islandais ?
+SELECT max(elevation) FROM airports WHERE country = 'Iceland'
+Quelle est la région et la population de l'Angola?
+"SELECT Population , Region FROM country WHERE Name = ""Angola"""
+où est le massachusetts
+"SELECT country_name FROM state WHERE state_name = ""massachusetts"";"
+Combien d'étudiants sont là?
+SELECT count(*) FROM list
+Quels sont le grade, le prénom et le nom des membres du corps professoral ?
+SELECT rank , Fname , Lname FROM Faculty
+Quels sont les noms, prénoms et dates d'embauche des employés du même service que quelqu'un qui s'appelle Clara ?
+"SELECT first_name , last_name , hire_date FROM employees WHERE department_id = (SELECT department_id FROM employees WHERE first_name = ""Clara"")"
+Dressez la liste des courriels, des téléphones cellulaires et des téléphones résidentiels de tous les professionnels.
+SELECT email_address , cell_number , home_phone FROM professionals
+Parmi toutes les réclamations, lesquelles ont un montant réclamé supérieur à la moyenne ? Indiquez la date à laquelle la réclamation a été faite et la date à laquelle elle a été réglée.
+SELECT Date_Claim_Made , Date_Claim_Settled FROM Claims WHERE Amount_Claimed > ( SELECT avg(Amount_Claimed) FROM Claims )
+Quels sont les identifiants de tous les commentateurs qui n'ont pas donné 4 étoiles au moins une fois ?
+SELECT rID FROM Rating WHERE stars != 4
+Comptez le nombre de programmes.
+SELECT count(*) FROM program
+Comptez le nombre d'artistes.
+SELECT count(*) FROM artist
+Répertoriez les identifiants des employés des médecins ainsi que les identifiants de leurs principaux départements d'affiliation.
+SELECT physician , department FROM affiliated_with WHERE primaryaffiliation = 1
+Quel est le nombre maximum et minimum de villes sur tous les marchés.
+SELECT max(Number_cities) , min(Number_cities) FROM market
+Quel est le montant maximum, minimum et moyen de l'encours du client ?
+SELECT max(amount_outstanding) , min(amount_outstanding) , avg(amount_outstanding) FROM Customers;
+quelle est la plus haute montagne du texas
+"SELECT highest_point FROM highlow WHERE state_name = ""texas"";"
+Quel contenu de catalogue a un prix supérieur à 700 dollars ? Montrez leurs noms et capacités d'entrée de catalogue.
+SELECT catalog_entry_name , capacity FROM Catalog_Contents WHERE price_in_dollars > 700
+"Quels sont les classements au recensement des villes qui n'ont pas le statut ""Village"" ?"
+"SELECT Census_Ranking FROM city WHERE Status != ""Village"""
+Combien coûte le type de charge le plus cher ?
+SELECT max(charge_amount) FROM Charges
+Combien y a-t-il de soumissions ?
+SELECT count(*) FROM submission
+Quels sont les identifiants de tous les étudiants qui ont le numéro de conseiller 1121 ?
+SELECT StuID FROM Student WHERE Advisor = 1121
+Qui est la personne dont l'âge est inférieur à 30 ans ?
+SELECT name FROM Person WHERE age < 30
+"Quelle est la date de naissance de chaque client dont le code de statut est ""Bon client"" ?"
+SELECT date_of_birth FROM Customers WHERE customer_status_code = 'Good Customer'
+"Combien de villes y a-t-il dans l'état ""Colorado"" ?"
+"SELECT count(*) FROM addresses WHERE state_province_county = ""Colorado"""
+quel est le nombre moyen d'usines et le nombre maximum de magasins pour les fabricants qui ont ouvert avant 1990.
+SELECT max(num_of_shops) , avg(Num_of_Factories) FROM manufacturer WHERE open_year < 1990
+Afficher le nom, la date d'ouverture et l'organisateur de toutes les églises.
+SELECT name , open_date , organized_by FROM Church
+Quelle est la description complète du travail d'un chercheur?
+SELECT role_description FROM Staff_Roles WHERE role_code = 'researcher'
+Quel est le nombre total de campus ?
+SELECT count(*) FROM campuses
+Quelle est la superficie totale des pays de la région Caraïbe ?
+"SELECT sum(SurfaceArea) FROM country WHERE Region = ""Caribbean"""
+Combien y a-t-il de films ?
+SELECT count(*) FROM film
+Comptez le nombre d'agences bancaires.
+SELECT count(*) FROM bank
+Afficher les dates de début et les dates de fin de toutes les réservations d'appartements.
+SELECT booking_start_date , booking_end_date FROM Apartment_Bookings
+Quel est le nombre moyen de clients dans les banques de l'État de l'Utah ?
+SELECT avg(no_of_customers) FROM bank WHERE state = 'Utah'
+Retrouvez tous les détails pour chaque nageur.
+SELECT * FROM swimmer
+Quel est le code postal de Port Chelsea ?
+SELECT zip_postcode FROM Addresses WHERE city = 'Port Chelsea'
+Quel est le nombre moyen d'inscriptions ?
+SELECT avg(enr) FROM College
+Quel est le nom et la distance des avions avec l'identifiant 12 ?
+SELECT name , distance FROM Aircraft WHERE aid = 12
+Quelles sont la date de début et la date de fin de chaque réservation d'appartement ?
+SELECT booking_start_date , booking_end_date FROM Apartment_Bookings
+Afficher le prénom de tous les étudiants avec le majeur 600.
+SELECT Fname FROM Student WHERE Major = 600
+Quels sont le budget maximum et minimum des départements ?
+SELECT max(budget_in_billions) , min(budget_in_billions) FROM department
+Quel est le bonus total accordé dans toutes les évaluations ?
+SELECT sum(bonus) FROM evaluation
+quels états la rivière ohio traverse-t-elle ?
+"SELECT traverse FROM river WHERE river_name = ""ohio"";"
+quels sont les principaux fleuves aux états-unis
+SELECT river_name FROM river;
+Compter le nombre d'écoles.
+SELECT count(*) FROM school
+quelle est la taille du nouveau mexique
+"SELECT area FROM state WHERE state_name = ""new mexico"";"
+"Quel numéro de suivi d'expédition de commande est ""3452"" ? Donnez-moi l'identifiant de la commande."
+"SELECT order_id FROM shipments WHERE shipment_tracking_number = ""3452"""
+Combien de chambres disposent d'un lit king-size ?
+"SELECT count(*) FROM Rooms WHERE bedType = ""King"";"
+Afficher tous les jeux vidéo de type Jeu de cartes à collectionner.
+"SELECT gname FROM Video_games WHERE gtype = ""Collectible card game"""
+quel état a la rivière ohio
+"SELECT traverse FROM river WHERE river_name = ""ohio"";"
+Quel est le nombre total de clubs ?
+SELECT count(*) FROM club
+Combien d'élèves ont 18 ans ?
+SELECT count(*) FROM Student WHERE age = 18
+À quelles attractions touristiques peut-on se rendre en bus ? Dites-moi les noms des attractions.
+"SELECT Name FROM TOURIST_ATTRACTIONS WHERE How_to_Get_There = ""bus"""
+Comptez le nombre de fermes.
+SELECT count(*) FROM farm
+Quelle est l'année d'ouverture et le nombre d'employés du musée nommé Plaza Museum ?
+SELECT Num_of_Staff , Open_Year FROM museum WHERE name = 'Plaza Museum'
+Calculez le score moyen des soumissions.
+SELECT avg(Scores) FROM submission
+lister les états
+SELECT state_name FROM state;
+Trouvez le nom des dortoirs pouvant accueillir plus de 300 étudiants.
+SELECT dorm_name FROM dorm WHERE student_capacity > 300
+Donnez-moi l'identifiant de paiement, la date et le montant de tous les paiements traités avec Visa.
+SELECT Payment_ID , Date_Payment_Made , Amount_Payment FROM Payments WHERE Payment_Method_Code = 'Visa'
+Renvoyer le taux de soutien maximal, le taux de considération minimal et le taux d'opposition minimal pour tous les candidats ?
+SELECT max(support_rate) , min(consider_rate) , min(oppose_rate) FROM candidate
+Combien d'employés vivent au Canada?
+"SELECT count(*) FROM employees WHERE country = ""Canada"";"
+Renvoie le nombre maximum et minimum de vaches dans toutes les fermes.
+SELECT max(Cows) , min(Cows) FROM farm
+Combien de types de budget avons-nous ?
+SELECT count(*) FROM Ref_budget_codes
+Renvoie les âges moyen et minimum des artistes des États-Unis.
+SELECT avg(age) , min(age) FROM artist WHERE country = 'United States'
+Indiquez le nom complet (nom et prénom) et le salaire des employés qui gagnent moins de 6000.
+SELECT first_name , last_name , salary FROM employees WHERE salary < 6000
+Quels sont les états, les types de compte et les cotes de crédit des clients qui n'ont aucun prêt ?
+SELECT state , acc_type , credit_score FROM customer WHERE no_of_loans = 0
+Sélectionnez le nom des produits dont le prix est inférieur ou égal à 200 $.
+SELECT name FROM products WHERE price <= 200
+Quels sont l'ID de journal et la description d'entrée de chaque problème ?
+SELECT problem_log_id , log_entry_description FROM problem_log
+Renvoie les gains moyens de tous les joueurs de poker.
+SELECT avg(Earnings) FROM poker_player
+"Quel est le type de données d'attribut de l'attribut portant le nom ""Green"" ?"
+"SELECT attribute_data_type FROM Attribute_Definitions WHERE attribute_name = ""Green"""
+quel état borde le kentucky
+"SELECT border FROM border_info WHERE state_name = ""kentucky"";"
+Afficher les joueurs et les années jouées.
+SELECT Player , Years_Played FROM player
+Afficher les identifiants de tous les employés avec au moins 100 000 de salaire.
+SELECT eid FROM Employee WHERE salary > 100000
+Quels sont les noms des chansons qui ont une cote inférieure à au moins une chanson de blues ?
+"SELECT song_name FROM song WHERE rating < (SELECT max(rating) FROM song WHERE genre_is = ""blues"")"
+Quelle est la capacité totale d'étudiants de tous les dortoirs ?
+SELECT sum(student_capacity) FROM dorm
+Combien d'avions avons-nous ?
+SELECT count(*) FROM Aircraft
+quels états ont un fleuve
+SELECT traverse FROM river;
+Comptez le nombre de pistes.
+SELECT count(*) FROM track
+Dis-moi quelles sont les villes du Texas
+"SELECT city_name FROM city WHERE state_name = ""texas"";"
+Combien de comptes avons-nous ?
+SELECT count(*) FROM Accounts
+quelle est la superficie de l'état avec la capitale albany
+"SELECT area FROM state WHERE capital = ""albany"";"
+"Retrouvez la description du club ""Pen and Paper Gaming""."
+"SELECT clubdesc FROM club WHERE clubname = ""Tennis Club"""
+Combien de régions avons-nous?
+SELECT count(*) FROM region
+Combien d'employés vivent au Canada?
+"SELECT count(*) FROM employees WHERE country = ""Canada"";"
+Combien de clients au total ?
+SELECT count(*) FROM Customers
+Quels sont les noms de tous les produits ?
+SELECT Name FROM Products
+Listez les noms et e-mails des clients qui ont payé par carte Visa.
+SELECT customer_email , customer_name FROM customers WHERE payment_method = 'Visa'
+Comptez le nombre de produits.
+SELECT count(*) FROM Products
+Combien y a-t-il d'examinateurs ?
+SELECT count(*) FROM Reviewer
+quels états traverse la rivière ohio
+"SELECT traverse FROM river WHERE river_name = ""ohio"";"
+combien de personnes résident en californie
+"SELECT population FROM state WHERE state_name = ""california"";"
+Combien de clubs ont moins de 10 médailles au total ?
+SELECT count(*) FROM club_rank WHERE Total < 10
+Combien d'employés vivent dans l'État de Géorgie ?
+"SELECT count(*) FROM addresses WHERE state_province_county = ""Colorado"""
+Combien d'entreprises ont été créées par Andy ?
+SELECT count(*) FROM manufacturers WHERE founder = 'Andy'
+Combien de cinéma avons-nous ?
+SELECT count(*) FROM cinema
+Quel est le nombre minimum et maximum de produits dans tous les magasins ?
+SELECT min(Number_products) , max(Number_products) FROM shop
+Trouvez le choix de forfait et le nom de la série de la chaîne de télévision qui a la télévision haute définition.
+"SELECT package_option , series_name FROM TV_Channel WHERE hight_definition_TV = ""yes"""
+Quelles sont les autres informations de compte pour le compte portant le nom 338 ?
+"SELECT other_account_details FROM Accounts WHERE account_name = ""338"""
+quels sont les points les plus élevés de tous les états
+SELECT highest_point FROM highlow;
+Trouvez le nom et l'e-mail des utilisateurs qui ont plus de 1000 abonnés.
+SELECT name , email FROM user_profiles WHERE followers > 1000
+donne moi les lacs de californie
+"SELECT lake_name FROM lake WHERE state_name = ""california"";"
+Combien y a-t-il de scientifiques ?
+SELECT count(*) FROM scientists
+Quelles sont toutes les dates d'inscription et d'achèvement enregistrées ?
+SELECT date_of_enrolment , date_of_completion FROM Student_Course_Enrolment
+Trouvez l'identifiant des trajets qui ont duré au moins aussi longtemps que la durée moyenne des trajets dans le code postal 94103.
+SELECT id FROM trip WHERE duration >= (SELECT avg(duration) FROM trip WHERE zip_code = 94103)
+Comptez le nombre de grimpeurs.
+SELECT count(*) FROM climber
+Quelle est la valeur marchande maximale et minimale des entreprises?
+SELECT max(Market_Value_in_Billion) , min(Market_Value_in_Billion) FROM company
+Quelle est la part de marché maximale, minimale et moyenne des navigateurs répertoriés ?
+SELECT max(market_share) , min(market_share) , avg(market_share) FROM browser
+Comptez le nombre de clients.
+SELECT count(*) FROM Customers
+Combien y a-t-il de fêtes ?
+SELECT count(*) FROM party
+Combien de cours étaient annulés ?
+"SELECT count(*) FROM Lessons WHERE lesson_status_code = ""Cancelled"";"
+Quel type de jeu est Call of Destiny ?
+"SELECT gtype FROM Video_games WHERE gname = ""Call of Destiny"""
+"Quelle est la date d'anniversaire des clients classés dans le statut ""Bon client"" ?"
+SELECT date_of_birth FROM Customers WHERE customer_status_code = 'Good Customer'
+Quels sont les noms de tous les instructeurs de la Comp. Sci. département?
+SELECT name FROM instructor WHERE dept_name = 'Comp. Sci.'
+Indiquez l'âge de tous les artistes musicaux.
+SELECT Age FROM artist
+Quel est le nombre total de personnes qui pourraient séjourner dans les chambres modernes de cette auberge ?
+SELECT sum(maxOccupancy) FROM Rooms WHERE decor = 'modern';
+Dressez la liste des inscriptions pour chaque école qui n'a pas «catholique» comme dénomination.
+"SELECT Enrollment FROM school WHERE Denomination != ""Catholic"""
+Quel est le décor de la chambre Recluse et défi ?
+"SELECT decor FROM Rooms WHERE roomName = ""Recluse and defiance"";"
+combien de personnes restent en californie
+"SELECT population FROM state WHERE state_name = ""california"";"
+Afficher les identifiants et les noms de tous les documents.
+SELECT document_id , document_name FROM Documents
+Afficher toutes les dates du calendrier et les numéros de jour.
+SELECT calendar_date , day_Number FROM Ref_calendar
+quelle est la plus haute altitude du delaware
+"SELECT highest_elevation FROM highlow WHERE state_name = ""delaware"";"
+Quels sont les numéros de tous les vols en provenance de Los Angeles ?
+"SELECT flno FROM Flight WHERE origin = ""Los Angeles"""
+Lister tous les identifiants de véhicules
+SELECT vehicle_id FROM Vehicles;
+énumérer les autorités locales et les services fournis par toutes les stations.
+SELECT local_authority , services FROM station
+Quel est le code de la catégorie à laquelle appartient le produit portant le nom 'lin' ?
+"SELECT product_category_code FROM products WHERE product_name = ""flax"""
+Comptez le nombre de films.
+SELECT count(*) FROM film
+Retrouvez tous les acteurs d'Afghanistan
+"SELECT name FROM actor WHERE nationality = ""Afghanistan"";"
+Comptez le nombre de magasins.
+SELECT count(*) FROM store
+"Recherchez la description du statut de réclamation ""Ouvert""."
+"SELECT claim_status_description FROM claims_processing_stages WHERE claim_status_name = ""Open"""
+Quel est le prix moyen des vêtements ?
+SELECT avg(product_price) FROM products WHERE product_type_code = 'Clothes'
+Trouvez le nombre total de scientifiques.
+SELECT count(*) FROM scientists
+Trouvez le nombre de cours distincts qui ont des étudiants inscrits.
+SELECT count(course_id) FROM Student_Course_Enrolment
+Trouvez le nombre d'animaux dont le poids est supérieur à 10.
+SELECT count(*) FROM pets WHERE weight > 10
+Quels campus se trouvent dans le comté de Los Angeles ?
+"SELECT campus FROM campuses WHERE county = ""Los Angeles"""
+Trouvez le prénom et le gpa des étudiants dont le gpa est inférieur au gpa moyen de tous les étudiants.
+SELECT stu_fname , stu_gpa FROM student WHERE stu_gpa < (SELECT avg(stu_gpa) FROM student)
+Quels sont les pays qui ont une superficie plus grande que n'importe quel pays d'Europe ?
+"SELECT Name FROM country WHERE SurfaceArea > (SELECT min(SurfaceArea) FROM country WHERE Continent = ""Europe"")"
+Trouvez les heures moyennes de tous les projets.
+SELECT avg(hours) FROM projects
+quelles sont les rivières dans l'illinois
+"SELECT river_name FROM river WHERE traverse = ""illinois"";"
+Afficher les surnoms des écoles qui ne sont pas en division 1.
+"SELECT Nickname FROM school_details WHERE Division != ""Division 1"""
+Liste toutes les informations sur toutes les personnes.
+SELECT * FROM people
+Quels sont le nom, le code de poste et la date de naissance de l'employé nommé « Armani » ?
+SELECT employee_name , role_code , date_of_birth FROM Employees WHERE employee_Name = 'Armani'
+Trouvez l'état, le type de compte et la cote de crédit du client dont le nombre de prêt est 0.
+SELECT state , acc_type , credit_score FROM customer WHERE no_of_loans = 0
+Quelles sont toutes les informations sur les employés embauchés avant le 21 juin 2002 ?
+SELECT * FROM employees WHERE hire_date < '2002-06-21'
+quel est l'état adjacent du kentucky
+"SELECT border FROM border_info WHERE state_name = ""kentucky"";"
+Combien de tempêtes ont enregistré des décès ?
+SELECT count(*) FROM storm WHERE Number_Deaths > 0
+Quel est le nombre total d'entreprises ?
+SELECT count(*) FROM company
+Répertoriez tous les codes d'emplacement et les noms d'emplacement.
+SELECT location_code , location_name FROM Ref_locations
+Quelle est la taille maximale et minimale de tous les joueurs ?
+SELECT max(weight) , min(weight) FROM Player
+"Quel est le code de localisation du pays ""Canada"" ?"
+"SELECT location_code FROM Ref_locations WHERE location_name = ""Canada"""
+"Quels sont les détails du paragraphe contenant le texte ""Corée"" ?"
+SELECT Other_Details FROM Paragraphs WHERE paragraph_text = 'Korea'
+Comment s'appellent les chambres qui coûtent plus cher que la moyenne.
+SELECT roomName FROM Rooms WHERE basePrice > ( SELECT avg(basePrice) FROM Rooms );
+Combien y a-t-il de représentations ?
+SELECT count(*) FROM performance
+Combien d'universités ont des frais de campus supérieurs à la moyenne ?
+SELECT count(*) FROM csu_fees WHERE campusfee > (SELECT avg(campusfee) FROM csu_fees)
+Quel est le nombre maximum et minimum de passagers en transit pour tous les aéroports ?
+SELECT max(Transit_Passengers) , min(Transit_Passengers) FROM airport
+Renvoyez la somme de tous les montants de paiement.
+SELECT sum(amount) FROM payment
+Comptez le nombre de pays en Asie.
+"SELECT count(*) FROM country WHERE continent = ""Asia"""
+Combien avons-nous de chanteurs ?
+SELECT count(*) FROM singer
+Quelle est la quantité moyenne d'articles commandés dans chaque commande ?
+SELECT avg(order_quantity) FROM order_items
+Combien de véhicules existe-t-il ?
+SELECT count(*) FROM Vehicles;
+"Trouvez la description de la catégorie de produits de la catégorie de produits avec le code ""Épices""."
+"SELECT product_category_description FROM ref_product_categories WHERE product_category_code = ""Spices"""
+"Retrouvez les dates des tests passés avec le résultat ""Pass""."
+"SELECT date_test_taken FROM Student_Tests_Taken WHERE test_result = ""Pass"""
+"Qu'est-ce que l'option de forfait de la chaîne de télévision avec le nom de série ""Sky Radio"" ?"
+"SELECT Package_Option FROM TV_Channel WHERE series_name = ""Sky Radio"";"
+Dites-moi la date de réclamation et la date de règlement pour chaque cas de règlement.
+SELECT Date_Claim_Made , Date_Claim_Settled FROM Settlements
+quelles sont les principales villes des états-unis
+SELECT city_name FROM city WHERE population > 150000;
+Combien de transcriptions sont publiées ?
+SELECT count(*) FROM Transcripts
+Quels sont le code d'emplacement de chaque document, ainsi que la date de début et les données de fin à cet emplacement ?
+SELECT location_code , date_in_location_from , date_in_locaton_to FROM Document_locations
+Donnez la ville dans laquelle vit l'élève dont le nom de famille est Kim.
+"SELECT city_code FROM Student WHERE LName = ""Kim"""
+rivières dans l'illinois
+"SELECT river_name FROM river WHERE traverse = ""illinois"";"
+Combien y a-t-il de rendez-vous ?
+SELECT count(*) FROM appointment
+Quel est le nombre moyen de passagers internationaux pour un aéroport ?
+SELECT avg(International_Passengers) FROM airport
+"Trouver l'identifiant des candidats dont le code d'évaluation est ""Pass"" ?"
+"SELECT candidate_id FROM candidate_assessments WHERE asessment_outcome_code = ""Pass"""
+Combien de chiens ont un âge inférieur à la moyenne ?
+SELECT count(*) FROM Dogs WHERE age < ( SELECT avg(age) FROM Dogs )
+Combien y a-t-il de tâches ?
+SELECT count(*) FROM Tasks
+Quel est l'effectif moyen des écoles ?
+SELECT avg(Enrollment) FROM school
+Quel est l'âge moyen, minimum et maximum de tous les chanteurs français ?
+SELECT avg(age) , min(age) , max(age) FROM singer WHERE country = 'France'
+Quels sont les noms des aéroports qui ne sont pas dans le pays 'Islande' ?
+SELECT name FROM airport WHERE country != 'Iceland'
+Calculez le prix moyen de tous les produits.
+SELECT avg(price) FROM products
+Quels sont les noms et les salaires des instructeurs qui gagnent moins que le salaire moyen des instructeurs du département de physique ?
+SELECT name , salary FROM instructor WHERE salary < (SELECT avg(salary) FROM instructor WHERE dept_name = 'Physics')
+quelle est la densité de population dans l'état avec la capitale austin
+"SELECT density FROM state WHERE capital = ""austin"";"
+Quels sont les personnages et la durée des acteurs ?
+SELECT Character , Duration FROM actor
+Afficher toutes les allergies et leurs types.
+SELECT allergy , allergytype FROM Allergy_type
+Renvoie le nombre maximum et minimum de villes sur tous les marchés.
+SELECT max(Number_cities) , min(Number_cities) FROM market
+Quels sont les noms de toutes les stations dont la latitude est inférieure à 37,5 ?
+SELECT name FROM station WHERE lat < 37.5
+Quels sont les noms de famille des élèves de la chambre 111 ?
+SELECT lastname FROM list WHERE classroom = 111
+Quels sont les noms et les distances de tous les avions ?
+SELECT name , distance FROM Aircraft
+Trouvez la ville avec le code postal 255.
+SELECT city FROM addresses WHERE zip_postcode = 255
+Quelles sont les entreprises et les investisseurs qui correspondent à chaque entrepreneur ?
+SELECT Company , Investor FROM entrepreneur
+"Trouvez le mode de paiement et le téléphone de la fête avec l'e-mail ""enrico09@example.com""."
+"SELECT payment_method_code , party_phone FROM parties WHERE party_email = ""enrico09@example.com"""
+"Quelle est la nationalité de l'actrice "" Christoph Waltz "" ?"
+"SELECT nationality FROM actor WHERE name = ""Christoph Waltz"";"
+Quelle est l'origine et la destination de tous les vols dont le prix est supérieur à 300 ?
+SELECT origin , destination FROM Flight WHERE price > 300
+Combien y a-t-il de clients ?
+SELECT sum(no_of_customers) FROM bank
+de quel état salem est la capitale
+"SELECT state_name FROM state WHERE capital = ""salem"";"
+Combien y a-t-il de compagnies aériennes ?
+SELECT count(*) FROM airlines
